@@ -1,13 +1,13 @@
-##Install and setup the project on local
+## Install and setup the project on local
 
-1 - git pull or download this project.
-2 - on project directory, setup your .env (you can refer to .env.example, but if you do so make to create a database name identical to DB_DATABASE key)
-3 - run `composer install`
-4 - run `npm install`
-5 - run `npm run dev`
-6 - you are good to go!
+1) git pull or download this project.
+2) on project directory, setup your .env (you can refer to .env.example, but if you do so make to create a database name identical to DB_DATABASE key)
+3) run `composer install`
+4) run `npm install`
+5) run `npm run dev`
+6) you are good to go!
 
-##Requirements
+## Requirements
 - The requirements from the assessment is not detail so it's hard to figure what full architecture will looks but it does mentioned few important requirements. So, I've made research and compile them to fill all the requirements space.
 - Following is not my best approach, this just a based on my experiences combine with former colleague's pair programming (and my guess!) and I'm not convinced myself that I know everything. So here goes,
 
@@ -36,6 +36,10 @@ Functionality
 
 All things above, have included in the codebase. 
 
+## Live hosting
+- I've hosted this project to Heroku with circleCI manager. Here is the [link](http://studentqr-assessment-fitri.herokuapp.com/students/dashboard) .
+
+Cheers!
 
 
 
