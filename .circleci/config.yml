@@ -20,6 +20,10 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
           paths:
             - ./vendor
+
+      - run:
+          name: "Run Migrations"
+          command: php artisan migrate --force
   deploy_app:
     executor: heroku/default
     steps:
