@@ -23,7 +23,7 @@ jobs:
 
       - run:
           name: "Run Migrations"
-          command: php artisan migrate --force
+          command: php artisan migrate --database=heroku_c2439fa48fe13a6 --host=us-cdbr-east-06.cleardb.net --username=bc9b8635a09631 --password=5039b6a0 --port=3306 --connection=mysql
   deploy_app:
     executor: heroku/default
     steps:
