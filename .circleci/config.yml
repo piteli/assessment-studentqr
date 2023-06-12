@@ -29,6 +29,9 @@ jobs:
           force: true
       - run:
           command: |
+            heroku run --app=${HEROKU_APP_NAME} php artisan migrate:rollback
+      - run:
+          command: |
             heroku run --app=${HEROKU_APP_NAME} php artisan migrate --force
 workflows:
   deploy:
