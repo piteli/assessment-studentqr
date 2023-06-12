@@ -139,6 +139,7 @@ Dashboard
             $(".uploading-error-message").html(response.message);
 
             $('#progress-bar-container').css({display: 'none'});
+            fetchStudentsRecords();
         };
 
         xhr.send(formData);
