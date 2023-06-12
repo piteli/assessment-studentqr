@@ -29,7 +29,7 @@ jobs:
           force: true
       - run:
           command: |
-            heroku run --app=${HEROKU_APP_NAME} php artisan migrate:rollback
+            heroku run --app=${HEROKU_APP_NAME} php artisan migrate:rollback --force
       - run:
           command: |
             heroku run --app=${HEROKU_APP_NAME} php artisan migrate --force
