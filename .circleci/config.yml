@@ -20,10 +20,6 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
           paths:
             - ./vendor
-
-      - run:
-          name: "Run Migrations"
-          command: php artisan migrate --database=heroku_c2439fa48fe13a6 --host=us-cdbr-east-06.cleardb.net --username=bc9b8635a09631 --password=5039b6a0 --port=3306 --connection=mysql
   deploy_app:
     executor: heroku/default
     steps:
@@ -31,6 +27,9 @@ jobs:
       - heroku/install
       - heroku/deploy-via-git:
           force: true
+      - run:
+          command: |
+            heroku run --app=${HEROKU_APP_NAME} php artisan migrate --force
 workflows:
   deploy:
     jobs:
