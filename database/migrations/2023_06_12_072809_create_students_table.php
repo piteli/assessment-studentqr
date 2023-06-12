@@ -13,14 +13,17 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('class');
-            $table->unsignedInteger('level');
-            $table->string('parent_contact');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('students')) {
+            Schema::create('students', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('class');
+                $table->unsignedInteger('level');
+                $table->string('parent_contact');
+                $table->timestamps();
+            });
+        }
+
     }
 
     /**
