@@ -24,6 +24,13 @@ jobs:
       - run:
           name: "Run Migrations"
           command: php artisan migrate --force
+  deploy_app:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git:
+          force: true
 workflows:
   deploy:
     jobs:
